@@ -1,8 +1,10 @@
 package application;
 
-public class Palindrom {
+public class Palindrome {
 
 	public static boolean isPalindrome(char[] letters) {
+		if (letters.length < 1)
+			return false;
 		letters = makeAllToLowerCase(letters);
 		boolean isPalindrom = true;
 		for (int i = 0; i != letters.length / 2; i++) {
@@ -17,6 +19,8 @@ public class Palindrom {
 	}
 
 	public static boolean isPalindromeRecursive(char[] letters) {
+		if (letters.length < 1)
+			return false;
 		makeAllToLowerCase(letters);
 		return recursion(letters, 0, letters.length - 1);
 	}
