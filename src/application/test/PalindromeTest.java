@@ -18,7 +18,7 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void checkEmptyIsPalindrom() {
+	public void checkEmptyIsNotPalindrom() {
 		String word = "";
 		assertEquals(false, Palindrome.isPalindrome(word.toCharArray()));
 		assertEquals(false, Palindrome.isPalindrome(word));
