@@ -12,9 +12,17 @@ public class Palindrom {
 		return isPalindrom;
 	}
 
+	public static boolean isPalindrome(String word) {
+		return isPalindrome(word.toCharArray());
+	}
+
 	public static boolean isPalindromeRecursive(char[] letters) {
 		makeAllToLowerCase(letters);
 		return recursion(letters, 0, letters.length - 1);
+	}
+
+	public static boolean isPalindromeRecursive(String word) {
+		return isPalindromeRecursive(word.toCharArray());
 	}
 
 	private static boolean recursion(char[] letters, int start, int end) {
