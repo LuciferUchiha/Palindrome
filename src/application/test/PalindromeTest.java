@@ -2,12 +2,14 @@ package application.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import application.Palindrome;
 
 public class PalindromeTest {
-	
+
 	@Test
 	public void checkAIsPalindrome() {
 		String word = "A";
@@ -16,7 +18,7 @@ public class PalindromeTest {
 		assertEquals(true, Palindrome.isCharArrayPalindromeRecursive(word.toCharArray()));
 		assertEquals(true, Palindrome.isWordPalindromeRecursive(word));
 	}
-	
+
 	@Test
 	public void checkEmptyIsNotPalindrome() {
 		String word = "";
@@ -52,7 +54,7 @@ public class PalindromeTest {
 		assertEquals(true, Palindrome.isCharArrayPalindromeRecursive(word.toCharArray()));
 		assertEquals(true, Palindrome.isWordPalindromeRecursive(word));
 	}
-	
+
 	@Test
 	public void checkPatrickIsNotPalindrome() {
 		String word = "Patrick";
@@ -61,7 +63,7 @@ public class PalindromeTest {
 		assertEquals(false, Palindrome.isCharArrayPalindromeRecursive(word.toCharArray()));
 		assertEquals(false, Palindrome.isWordPalindromeRecursive(word));
 	}
-	
+
 	@Test
 	public void checkSentencesArePalindromes() {
 		String mrOwlSentence = "Mr. Owl ate my metal worm";
@@ -72,14 +74,14 @@ public class PalindromeTest {
 		assertEquals(true, Palindrome.isSentencePalindrome(salamiSentence));
 		assertEquals(true, Palindrome.isSentencePalindromeRecursive(salamiSentence));
 	}
-	
+
 	@Test
 	public void checkEmptySentenceIsNotPalindrome() {
 		String emptySentence = "";
 		assertEquals(false, Palindrome.isSentencePalindrome(emptySentence));
 		assertEquals(false, Palindrome.isSentencePalindromeRecursive(emptySentence));
 	}
-	
+
 	@Test
 	public void checkIncorrectSentencesAreNotPalindromes() {
 		String mrOwlSentence = "Mrs. Owl ate my metal worm";
@@ -91,7 +93,8 @@ public class PalindromeTest {
 		assertEquals(false, Palindrome.isSentencePalindromeRecursive(salamiSentence));
 	}
 	
-	public void checkNumbersArePalindromes(){
+	@Test
+	public void checkNumbersArePalindromes() {
 		int evenLengthNumber = 11;
 		assertEquals(true, Palindrome.isNumberPalindrome(evenLengthNumber));
 		assertEquals(true, Palindrome.isNumberPalindromeRecursive(evenLengthNumber));
@@ -100,12 +103,27 @@ public class PalindromeTest {
 		assertEquals(true, Palindrome.isNumberPalindromeRecursive(unevenLengthNumber));
 	}
 	
-	public void checkIncorrectNumbersAreNotPalindromes(){
+	@Test
+	public void checkIncorrectNumbersAreNotPalindromes() {
 		int evenLengthNumber = 12;
 		assertEquals(false, Palindrome.isNumberPalindrome(evenLengthNumber));
 		assertEquals(false, Palindrome.isNumberPalindromeRecursive(evenLengthNumber));
 		int unevenLengthNumber = 123;
 		assertEquals(false, Palindrome.isNumberPalindrome(unevenLengthNumber));
 		assertEquals(false, Palindrome.isNumberPalindromeRecursive(unevenLengthNumber));
+	}
+	
+	@Test
+	public void checkAllPalindomresInRange() {
+		ArrayList<Integer> expected = new ArrayList<>();
+		expected.add(151);
+		expected.add(161);
+		expected.add(171);
+		expected.add(181);
+		expected.add(191);
+		expected.add(202);
+		expected.add(212);
+		assertEquals(expected, Palindrome.getAllPalindromesInRange(150, 220));
+		assertEquals(expected, Palindrome.getAllPalindromesInRangeRecursive(150, 220));
 	}
 }
