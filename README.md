@@ -8,7 +8,7 @@
 
 ## About The Project
 
-This Class checks to see if a entered String or char array is a palindrome and returns a boolean. A palindrome is a wordwhich reads the same backward as forward, such as madam or the famous band ABBA. The Class contains to different algorithms, one being recursive. [Read more on Palindrome](https://en.wikipedia.org/wiki/Palindrome)
+This Class checks to see if a entered String or char array is a palindrome and returns a boolean. A palindrome is a word, sentence or number which reads the same backward as forward, such as madam, the famous band ABBA, the sentence "Do geese see God?" or the number 1234321. The Class contains two different algorithms, one being recursive. [Read more on Palindrome](https://en.wikipedia.org/wiki/Palindrome)
 
 ### Built With
 * [Java](https://www.java.com/en/)
