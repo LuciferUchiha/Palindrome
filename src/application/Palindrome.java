@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 public class Palindrome {
 	
 	public static boolean isCharArrayPalindrome(char[] letters) {
@@ -27,6 +29,15 @@ public class Palindrome {
 		return isWordPalindrome(String.valueOf(number));
 	}
 	
+	public static ArrayList<Integer> getAllPalindromesInRange(int start, int end){
+		ArrayList<Integer> results = new ArrayList<>();
+		for(int number = start; number != end; number++){
+			if(isNumberPalindrome(number))
+				results.add(number);
+		}
+		return results;
+	}
+	
 	/* Recursive */
 
 	public static boolean isCharArrayPalindromeRecursive(char[] letters) {
@@ -49,6 +60,15 @@ public class Palindrome {
 		return isWordPalindrome(String.valueOf(number));
 	}
 
+	public static ArrayList<Integer> getAllPalindromesInRangeRecursive(int start, int end){
+		ArrayList<Integer> results = new ArrayList<>();
+		for(int number = start; number != end; number++){
+			if(isNumberPalindromeRecursive(number))
+				results.add(number);
+		}
+		return results;
+	}
+	
 	private static boolean recursion(char[] letters, int start, int end) {
 		if (start == end)
 			return true;
