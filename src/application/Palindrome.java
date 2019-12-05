@@ -1,8 +1,8 @@
 package application;
 
 public class Palindrome {
-
-	public static boolean isPalindrome(char[] letters) {
+	
+	public static boolean isCharArrayPalindrome(char[] letters) {
 		if (letters.length < 1)
 			return false;
 		letters = makeAllToLowerCase(letters);
@@ -14,19 +14,39 @@ public class Palindrome {
 		return isPalindrom;
 	}
 
-	public static boolean isPalindrome(String word) {
-		return isPalindrome(word.toCharArray());
+	public static boolean isWordPalindrome(String word) {
+		return isCharArrayPalindrome(word.toCharArray());
 	}
+	
+	public static boolean isSentencePalindrome(String sentence) {
+		sentence = sentence.replaceAll("[^a-zA-Z]", "");
+		return isWordPalindrome(sentence);
+	}
+	
+	public static boolean isNumberPalindrome(int number) {
+		return isWordPalindrome(String.valueOf(number));
+	}
+	
+	/* Recursive */
 
-	public static boolean isPalindromeRecursive(char[] letters) {
+	public static boolean isCharArrayPalindromeRecursive(char[] letters) {
 		if (letters.length < 1)
 			return false;
 		makeAllToLowerCase(letters);
 		return recursion(letters, 0, letters.length - 1);
 	}
 
-	public static boolean isPalindromeRecursive(String word) {
-		return isPalindromeRecursive(word.toCharArray());
+	public static boolean isWordPalindromeRecursive(String word) {
+		return isCharArrayPalindromeRecursive(word.toCharArray());
+	}
+	
+	public static boolean isSentencePalindromeRecursive(String sentence) {
+		sentence = sentence.replaceAll("[^a-zA-Z]", "");
+		return isWordPalindromeRecursive(sentence);
+	}
+	
+	public static boolean isNumberPalindromeRecursive(int number) {
+		return isWordPalindrome(String.valueOf(number));
 	}
 
 	private static boolean recursion(char[] letters, int start, int end) {
