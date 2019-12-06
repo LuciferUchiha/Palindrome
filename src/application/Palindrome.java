@@ -1,9 +1,10 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Palindrome {
-	
+
 	public static boolean isCharArrayPalindrome(char[] letters) {
 		if (letters.length < 1)
 			return false;
@@ -19,25 +20,25 @@ public class Palindrome {
 	public static boolean isWordPalindrome(String word) {
 		return isCharArrayPalindrome(word.toCharArray());
 	}
-	
+
 	public static boolean isSentencePalindrome(String sentence) {
 		sentence = sentence.replaceAll("[^a-zA-Z]", "");
 		return isWordPalindrome(sentence);
 	}
-	
+
 	public static boolean isNumberPalindrome(int number) {
 		return isWordPalindrome(String.valueOf(number));
 	}
-	
-	public static ArrayList<Integer> getAllPalindromesInRange(int start, int end){
-		ArrayList<Integer> results = new ArrayList<>();
-		for(int number = start; number != end; number++){
-			if(isNumberPalindrome(number))
+
+	public static List<Integer> getAllPalindromesInRange(int start, int end) {
+		List<Integer> results = new ArrayList<Integer>();
+		for (int number = start; number != end; number++) {
+			if (isNumberPalindrome(number))
 				results.add(number);
 		}
 		return results;
 	}
-	
+
 	/* Recursive */
 
 	public static boolean isCharArrayPalindromeRecursive(char[] letters) {
@@ -50,25 +51,25 @@ public class Palindrome {
 	public static boolean isWordPalindromeRecursive(String word) {
 		return isCharArrayPalindromeRecursive(word.toCharArray());
 	}
-	
+
 	public static boolean isSentencePalindromeRecursive(String sentence) {
 		sentence = sentence.replaceAll("[^a-zA-Z]", "");
 		return isWordPalindromeRecursive(sentence);
 	}
-	
+
 	public static boolean isNumberPalindromeRecursive(int number) {
 		return isWordPalindrome(String.valueOf(number));
 	}
 
-	public static ArrayList<Integer> getAllPalindromesInRangeRecursive(int start, int end){
-		ArrayList<Integer> results = new ArrayList<>();
-		for(int number = start; number != end; number++){
-			if(isNumberPalindromeRecursive(number))
+	public static List<Integer> getAllPalindromesInRangeRecursive(int start, int end) {
+		List<Integer> results = new ArrayList<Integer>();
+		for (int number = start; number != end; number++) {
+			if (isNumberPalindromeRecursive(number))
 				results.add(number);
 		}
 		return results;
 	}
-	
+
 	private static boolean recursion(char[] letters, int start, int end) {
 		if (start == end)
 			return true;
