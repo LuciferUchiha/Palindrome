@@ -3,6 +3,7 @@ package application.test;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -92,7 +93,7 @@ public class PalindromeTest {
 		assertEquals(false, Palindrome.isSentencePalindrome(salamiSentence));
 		assertEquals(false, Palindrome.isSentencePalindromeRecursive(salamiSentence));
 	}
-	
+
 	@Test
 	public void checkNumbersArePalindromes() {
 		int evenLengthNumber = 11;
@@ -102,7 +103,7 @@ public class PalindromeTest {
 		assertEquals(true, Palindrome.isNumberPalindrome(unevenLengthNumber));
 		assertEquals(true, Palindrome.isNumberPalindromeRecursive(unevenLengthNumber));
 	}
-	
+
 	@Test
 	public void checkIncorrectNumbersAreNotPalindromes() {
 		int evenLengthNumber = 12;
@@ -112,10 +113,10 @@ public class PalindromeTest {
 		assertEquals(false, Palindrome.isNumberPalindrome(unevenLengthNumber));
 		assertEquals(false, Palindrome.isNumberPalindromeRecursive(unevenLengthNumber));
 	}
-	
+
 	@Test
 	public void checkAllPalindomresInRange() {
-		ArrayList<Integer> expected = new ArrayList<>();
+		List<Integer> expected = new ArrayList<Integer>();
 		expected.add(151);
 		expected.add(161);
 		expected.add(171);
